@@ -1,8 +1,10 @@
 package com.spring.udemy.spring.service;
 
-import com.spring.udemy.spring.entidades.CategoriaEntity;
+import com.spring.udemy.spring.entity.CategoriaEntity;
 import com.spring.udemy.spring.repository.CategoriaRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CategoriaService {
@@ -17,4 +19,7 @@ public class CategoriaService {
         return categoriaRepository.findById(id).orElse(null);
     }
 
+    public List<CategoriaEntity> recuperarTodos() {
+        return (List<CategoriaEntity>) categoriaRepository.findAll();
+    }
 }
